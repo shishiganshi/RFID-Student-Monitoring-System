@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Reports</title></head><body><h2>Reports</h2><p>Reports and analytics will be added here (attendance trends, most active students, etc.).</p></body></html>

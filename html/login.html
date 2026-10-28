@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMU Access Portal</title>
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-left">
+      <div class="login-box">
+        <h1 class="login-title">CMU RFID Portal</h1>
+        <p class="login-subtitle">Access Control System</p>
+        <div class="rfid-login">
+          <p class="rfid-instruction">Please scan your RFID card to login</p>
+          <div class="rfid-status" id="rfidStatus">Initializing...</div>
+        </div>
+        <div class="manual-override">
+          <p class="admin-note">Admin Manual Override:</p>
+          <form onsubmit="loginUser(event)" id="adminForm" style="display: none;">
+            <div class="form-group">
+              <label for="adminKey">Admin Key</label>
+              <input id="adminKey" type="password" placeholder="Enter admin key" required>
+            </div>
+            <button type="submit" class="btn-primary">Override Access</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-right">
+      <div class="decor-box">
+        <h2></h2> 
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="networkDebug" style="position:fixed; bottom:0; left:0; padding:10px; background:#f8f8f8; font-family:monospace; font-size:12px; border-top:1px solid #ddd; width:100%;">
+    <div style="display:flex; justify-content:space-between; max-width:600px;">
+      <div>
+        <p>Web Server: <span id="serverIp" style="color:#4CAF50">Detecting...</span></p>
+        <p>ESP32 Status: <span id="connectionStatus" style="color:#FFA500">Checking...</span></p>
+        <p>ESP32 IP: <span id="esp32Ip" style="color:#2196F3">Waiting...</span></p>
+      </div>
+      <div>
+        <p>Last RFID Scan: <span id="lastScan">None</span></p>
+        <p>Session ID: <span id="sessionId">None</span></p>
+        <p>Time: <span id="dateTime">--:--:--</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // This inline script just updates the debug panel's clock and server IP.
+    function updateDebugPanel() {
+      const webServer = window.location.hostname || 'localhost';
+      document.getElementById('serverIp').textContent = webServer;
+      document.getElementById('dateTime').textContent = new Date().toLocaleString();
+    }
+    updateDebugPanel();
+    setInterval(updateDebugPanel, 1000);
+  </script>
+
+  <script src="../javascript/rfid-auth.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Settings</title></head><body><h2>Settings</h2><p>Manage account and system configurations here.</p></body></html>

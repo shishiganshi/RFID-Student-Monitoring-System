@@ -1,0 +1,263 @@
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #f8f9fa;
+    --accent-color: #0d47a1;
+    --text-color: #202124;
+    --sidebar-width: 250px;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--secondary-color); /* Use a simple background for consistency */
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex; /* Use flexbox for overall layout */
+}
+
+/* --- Sidebar Styles --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: linear-gradient(180deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    color: #ecf0f1; /* Consistent light text color */
+    padding: 1.5rem;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+    color: #ecf0f1; /* Default link text color */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    position: relative; /* Keep for potential future use */
+    z-index: 1; /* Ensure text is on top */
+}
+
+/* --- *** CORRECTED HOVER RULE (FINAL) *** --- */
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.15); /* Light background */
+    color: #0d47a1 !important; /* Dark blue text color - Use !important to force override */
+    transform: translateX(5px); /* Optional indent */
+}
+/* --- *** END CORRECTION *** --- */
+
+.sidebar a.active {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    color: #ecf0f1; /* Ensure active text remains light */
+}
+
+.sidebar i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.sidebar-divider {
+    border: 0;
+    height: 1px;
+    background-color: #ecf0f1;
+    margin: 15px 0;
+    opacity: 0.2;
+}
+
+/* --- Main Content Area Styles --- */
+.content {
+    margin-left: var(--sidebar-width);
+    padding: 2rem;
+    width: calc(100% - var(--sidebar-width));
+    min-height: 100vh;
+    background-color: var(--secondary-color); /* Simple background */
+    position: relative;
+    transition: margin-left 0.3s ease;
+    /* Removed the complex ::before background pattern for simplicity */
+}
+
+/* --- Header Styles --- */
+header {
+    margin-bottom: 2rem;
+}
+
+#currentDateTime {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* --- Card Styles (Dashboard) --- */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.stat-card .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+.stat-card .card-header i {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    color: var(--primary-color);
+}
+.stat-card .card-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.stat-card .card-value {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: auto;
+}
+.stat-card.denied .card-header i,
+.stat-card.denied .card-value {
+    color: #dc3545;
+}
+
+/* --- Table Styles --- */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+.table-container h2 {
+     padding: 1rem 1.5rem;
+     margin: 0;
+     font-size: 1.3rem;
+     border-bottom: 1px solid #dee2e6;
+}
+.table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.table th {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    border-top: none;
+    border-bottom-width: 1px;
+    white-space: nowrap;
+}
+.table td {
+    padding: 1rem 1.5rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+.table tbody tr:hover {
+    background-color: rgba(26, 115, 232, 0.05);
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    font-size: 0.85rem;
+    padding: 0.5em 0.8em;
+}
+
+/* Code Tag Styling */
+code {
+    background: var(--secondary-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.875em;
+    color: var(--text-color);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a1a1a1; }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+     .content {
+        width: 100%;
+        margin-left: 0;
+        padding: 1rem;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        width: 250px;
+        z-index: 1050;
+    }
+    .sidebar.show {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-stats { grid-template-columns: 1fr; }
+    .table th, .table td { padding: 0.75rem; }
+}
+
+/* Print styles */
+@media print {
+    body { background: white; }
+    .sidebar { display: none; }
+    .content { margin-left: 0; width: 100%; padding: 0; }
+    .stat-card { break-inside: avoid; box-shadow: none !important; border: 1px solid #ddd; }
+    .table-container { box-shadow: none !important; border: 1px solid #ddd; }
+    a { text-decoration: none; color: black; }
+    .btn { display: none; }
+}

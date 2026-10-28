@@ -1,0 +1,122 @@
+/* ===== Root Theme Colors ===== */
+:root {
+    --primary-color: #1e1f29;
+    --secondary-color: #3a3f58;
+    --accent-color: #4e9eff;
+    --danger-color: #e74c3c;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --text-color: #f5f6fa;
+    --muted-text: #a4a6b3;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --radius: 12px;
+  }
+  
+  /* ===== General Reset ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* ===== Glass Effect ===== */
+  .glass-card {
+    background: var(--glass-bg);
+    border-radius: var(--radius);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    padding: 20px;
+  }
+  
+  /* ===== Login Page ===== */
+  .login-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1f29, #3a3f58);
+  }
+  
+  .login-container {
+    width: 350px;
+    text-align: center;
+  }
+  
+  .brand-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+  }
+  
+  .login-form .form-group {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: var(--muted-text);
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: var(--radius);
+    border: none;
+    outline: none;
+    background: var(--secondary-color);
+    color: var(--text-color);
+  }
+  
+  .login-form input:focus {
+    border: 2px solid var(--accent-color);
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .btn-primary {
+    background: var(--accent-color);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background: #3581db;
+  }
+  
+  .btn-secondary {
+    background: #44475a;
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background: #5c5f78;
+  }
+  
+  .login-footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--muted-text);
+  }
+  

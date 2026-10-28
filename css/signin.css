@@ -1,0 +1,105 @@
+/* Signin Page Styling - mirrors login.css */
+
+/* Fullscreen background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #001a57, #003366);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Main wrapper */
+  .signin-wrapper {
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Left side (can use same background or image like login) */
+  .signin-left {
+    flex: 1;
+    background: url('../resources/cmu-bg.jpg') no-repeat center center/cover;
+  }
+  
+  /* Right side with frosted glass */
+  .signin-right {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .signin-right h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .signin-right label {
+    font-size: 14px;
+    margin: 10px 0 5px;
+    display: block;
+  }
+  
+  .signin-right input,
+  .signin-right select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 15px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .signin-right input:focus,
+  .signin-right select:focus {
+    border: 2px solid #00aaff;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .signin-right button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #00aaff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .signin-right button:hover {
+    background: #0077cc;
+  }
+  
+  .signin-right .login-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .signin-right .login-link a {
+    color: #00aaff;
+    text-decoration: none;
+  }
+  
+  .signin-right .login-link a:hover {
+    text-decoration: underline;
+  }
+  

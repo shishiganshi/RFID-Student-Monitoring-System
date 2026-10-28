@@ -1,0 +1,42 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+**/secrets.h
+**/config.local.php
+
+# Local data and generated uploads can contain identifiable student information
+/data/
+/uploads/
+
+# Historical copies may contain credentials, test records, or stale code
+/backup_before_cleanup/
+/deprecated_files/
+/esp32/obsolete files/
+
+# This database export contains student records and password hashes.
+/sql/cmu_rfid_portal.sql
+
+# Unused bundled libraries and third-party example/test assets
+/esp32/libraries/Adafruit_ILI9341/
+/esp32/libraries/Adafruit_MLX90614_Library/
+/esp32/libraries/Adafruit_seesaw_Library/
+/esp32/libraries/Adafruit_SH110X/
+/esp32/libraries/Adafruit_ST7735_and_ST7789_Library/
+/esp32/libraries/Adafruit_STMPE610/
+/esp32/libraries/Adafruit_TouchScreen/
+/esp32/libraries/Adafruit_TSC2007/
+/esp32/libraries/Async_TCP/
+/esp32/libraries/RTClib/
+/esp32/libraries/SD/
+/esp32/libraries/SparkFun_MAX3010x_Pulse_and_Proximity_Sensor_Library/
+/esp32/libraries/U8g2/
+/esp32/libraries/VEGA_MAX30102/
+/esp32/libraries/*/examples/
+/esp32/libraries/ArduinoJson/extras/
+/esp32/libraries/TFT_eSPI/tools/
+
+# Local editor and operating-system files
+.vscode/
+.DS_Store
+Thumbs.db
