@@ -19,6 +19,12 @@ The prototype combines an ESP32, RFID reader, display, camera module, and status
 
 ![RFID terminal prototype](docs/images/hardware-prototype.png)
 
+### System demonstration
+
+This short demo shows the RFID terminal operating alongside the monitoring portal using synthetic data.
+
+![RFID student monitoring system demonstration](docs/images/system-demo.gif)
+
 ### Portal sign-in screen
 
 This manuscript illustration is cropped to omit the local IP address and session details.
