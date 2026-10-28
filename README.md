@@ -98,8 +98,6 @@ Runtime data, uploaded images, backup files, obsolete sketches, and the original
 5. In each ESP32 sketch folder, copy `secrets.h.example` to `secrets.h` and set your own Wi-Fi network, fallback server address, and authorized administrator RFID UID where applicable. These local `secrets.h` files are ignored by Git.
 6. Open the required `.ino` file in Arduino IDE, install the required libraries, select the matching ESP32 board and port, then build and upload the sketch.
 
-Do not commit `secrets.h`, student data, or camera uploads. The previous Wi-Fi passwords and administrator RFID UID were exposed in source before cleanup; rotate those Wi-Fi passwords and replace that RFID card before using the system again. Set the replacement UID in the local PHP environment and firmware `secrets.h` files.
-
 ## Hardware and network notes
 
 Pin assignments, peripheral settings, and supported board variants are defined in the firmware and its included headers. Confirm wiring against the actual prototype before powering it. The web portal and terminal are designed for a controlled local network; the firmware uses HTTP and should not be exposed directly to the internet.
