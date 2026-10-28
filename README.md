@@ -19,6 +19,16 @@ The prototype combines an ESP32, RFID reader, display, camera module, and status
 
 ![RFID terminal prototype](docs/images/hardware-prototype.png)
 
+#### Prototype build photos
+
+The photos below show the enclosure interior, exterior, and front panel.
+
+![Inside the RFID terminal prototype enclosure](docs/images/prototype-interior.jpg)
+
+![Exterior of the RFID terminal prototype enclosure](docs/images/prototype-enclosure.jpg)
+
+![Front panel of the RFID terminal prototype](docs/images/prototype-front-panel.jpg)
+
 ### System demonstration
 
 This short demo shows the RFID terminal operating alongside the monitoring portal using synthetic data.
